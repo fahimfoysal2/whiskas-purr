@@ -1,0 +1,20 @@
+.header-top-main-wrap {
+  background: #a7268e;
+  padding: 10px;
+  .header-top-inner-wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.header-bottom-main-wrap {
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background: #770067 !important;
+    .m-auto.navbar-nav a {
+      color: #fff !important;
+      span {
+        color: #ffb800;
+      }
+    }
+  }
+}

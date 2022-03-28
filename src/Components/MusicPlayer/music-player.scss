@@ -1,0 +1,65 @@
+.music-player-inner-content-wrap {
+  width: 630px;
+  margin: auto;
+  .react-tabs__tab-panel--selected {
+    display: block;
+    background: linear-gradient(180deg, #90007e, #950c8440);
+    color: #fff;
+    min-height: 400px;
+    padding: 30px;
+    border-radius: 0px 5px 5px 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  .react-tabs__tab {
+    display: inline-block;
+    border: 1px solid #eacfe700;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #90007e30;
+    border-radius: 5px;
+  }
+  ul.react-tabs__tab-list {
+    margin-bottom: 0;
+    border-bottom: 1px solid #90007e;
+  }
+
+  .react-tabs__tab--selected {
+    background: #90007e;
+    border-color: #90007e;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+
+    bottom: 0;
+    .youtube-player-area {
+      width: 100%;
+      height: 100%;
+      > iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .react-tabs__tab:focus:after {
+    content: "";
+    position: absolute;
+    height: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #90007e;
+  }
+  .music-player-content-top {
+    text-align: center;
+    padding: 50px;
+    h3 {
+      color: #90007e;
+      font-weight: 700;
+      font-size: 30px;
+    }
+  }
+}
