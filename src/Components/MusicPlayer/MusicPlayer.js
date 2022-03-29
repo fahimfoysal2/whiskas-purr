@@ -18,8 +18,8 @@ const MusicPlayer = () => {
             <div className="music-player-tabs-wrap">
               <Tabs>
                 <TabList>
-                  <Tab>Youtube</Tab>
-                  <Tab>Spotify</Tab>
+                  <Tab>Watch the Purr</Tab>
+                  <Tab>Listen to the Purr</Tab>
                 </TabList>
 
                 <TabPanel>
