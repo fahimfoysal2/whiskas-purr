@@ -12,14 +12,24 @@ const MusicPlayer = () => {
             <div className="music-player-content-top">
               <h3>
                 Love the Purr, Feel the Purr,
-                <br /> Feed their Purr.{" "}
+                <br /> Feed their Purr.
               </h3>
             </div>
             <div className="music-player-tabs-wrap">
               <Tabs>
                 <TabList>
-                  <Tab>Youtube</Tab>
-                  <Tab>Spotify</Tab>
+                  <Tab>
+                    <span>
+                      <i className="fa-brands fa-youtube"></i>
+                    </span>
+                    Watch the Purr
+                  </Tab>
+                  <Tab>
+                    <span>
+                      <i className="fa-brands fa-spotify"></i>
+                    </span>
+                    Listen to the Purr
+                  </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -29,14 +39,22 @@ const MusicPlayer = () => {
                       height="400"
                       src="https://www.youtube.com/embed/ByH9LuSILxU"
                       title="YouTube video player"
-                      frameborder="0"
+                      frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
+                      allowFullScreen
                     ></iframe>
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <h2>Any content 2</h2>
+                  <iframe
+                    src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
+                    title="spotify music player"
+                    width="564"
+                    height="400"
+                    frameBorder="0"
+                    allowtransparency="true"
+                    allow="encrypted-media"
+                  ></iframe>
                 </TabPanel>
               </Tabs>
             </div>

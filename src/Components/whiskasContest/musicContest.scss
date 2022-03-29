@@ -1,0 +1,69 @@
+.music-contest-toptitle-wrap {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h2 {
+    font-weight: 700;
+    span {
+      color: #ffcd36;
+    }
+  }
+}
+.music-contest-content-wrap {
+  p {
+    padding: 30px 25%;
+    text-align: center;
+    color: #910480;
+  }
+}
+.contest-navbar-icon {
+  text-align: center;
+  color: #910480;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.music-contest-data-upload-wrap {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+.submit-contenst-button-bottom {
+  text-align: right;
+  button {
+    color: #fff;
+  }
+}
+.footer-top-main-wrap {
+  text-align: center;
+  background: #808080db;
+  padding: 50px 0px 20px 0px;
+  color: #fff;
+  .footer-top-single-item {
+    ul {
+      padding-left: 0;
+      li {
+        list-style: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.footer-bottom-main-wrap {
+  background: #90007e;
+  padding: 50px;
+  .footer-top-single-item p {
+    margin-bottom: 0;
+    color: #fff;
+  }
+}

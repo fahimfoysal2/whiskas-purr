@@ -1,6 +1,9 @@
 .music-player-inner-content-wrap {
-  width: 630px;
+  width: 960px;
   margin: auto;
+  background: #5c00500a;
+  padding-bottom: 50px;
+
   .react-tabs__tab-panel--selected {
     display: block;
     background: linear-gradient(180deg, #90007e, #950c8440);
@@ -10,6 +13,10 @@
     border-radius: 0px 5px 5px 5px;
     margin-bottom: 30px;
     overflow: hidden;
+    iframe {
+      width: 100%;
+      min-height: 430px;
+    }
   }
   .react-tabs__tab {
     display: inline-block;
@@ -20,8 +27,15 @@
     list-style: none;
     padding: 6px 12px;
     cursor: pointer;
-    background: #90007e30;
+    background: #90007e1a;
     border-radius: 5px;
+    color: #90007e;
+    font-weight: 700;
+    font-size: 18px;
+    span {
+      display: inline-block;
+      padding-right: 10px;
+    }
   }
   ul.react-tabs__tab-list {
     margin-bottom: 0;
