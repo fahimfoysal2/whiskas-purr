@@ -77,3 +77,12 @@
     }
   }
 }
+// .ant-steps-item-icon {
+//   display: none;
+// }
+.ant-steps.ant-steps-horizontal.ant-steps-label-horizontal {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
