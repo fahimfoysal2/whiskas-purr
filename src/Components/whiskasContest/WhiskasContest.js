@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import bgImage from "./img/bgImage.png";
 import navIconActive from "./img/iconActive.svg";
 import navDeIconActive from "./img/iconDeactive.svg";
 import "./musicContest.scss";
+
 const WhiskasContest = () => {
+  const history = useHistory();
+
   const [inputField, setInputField] = useState("");
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
@@ -30,7 +34,10 @@ const WhiskasContest = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setInputField(e.target.value);
-    await axios.post(`https://reqres.in/api/users`, formData);
+    await axios.post(`http://localhost:5000/users`, formData);
+    setTimeout(() => {
+      history.push("/successful");
+    }, 2000);
   };
 
   const onInputChange = (e) => {
@@ -112,6 +119,7 @@ const WhiskasContest = () => {
                                   type="file"
                                   onChange={(e) => onInputChange(e)}
                                   name="fileUpload"
+                                  required
                                 />
                               </Form.Group>
                             </Col>
@@ -123,7 +131,7 @@ const WhiskasContest = () => {
                                 <Form.Text className="text-danger mt-5 mb-3 d-block">
                                   How many cat(s) do you live with? *
                                 </Form.Text>
-                                <Form.Select onChange={handleChange}>
+                                <Form.Select onChange={handleChange} required>
                                   <option value={2} defaultValue>
                                     2
                                   </option>
@@ -266,8 +274,6 @@ const WhiskasContest = () => {
                       ) : page === 1 ? (
                         <div className="sign-up-container">
                           <h4 className="mb-4">About You</h4>
-                          email: "", userFirstName: "", userLastName: "",
-                          phoneNumber: "",
                           <>
                             <Row>
                               <Col lg={6}>
@@ -362,7 +368,8 @@ const WhiskasContest = () => {
                     <div className="mt-5">
                       {page == 0 ? (
                         <div className="form-navbar-main-btn-area">
-                          <button
+                          <p
+                            className="next-form-button-fmgfd"
                             onClick={() => {
                               if (page === FormTitles.length - 1) {
                                 alert("FORM SUBMITTED");
@@ -373,7 +380,7 @@ const WhiskasContest = () => {
                             }}
                           >
                             {page === FormTitles.length - 1 ? "Submit" : "Next"}
-                          </button>
+                          </p>
                         </div>
                       ) : page == 1 ? (
                         <div className="form-navbar-main-btn-area next">
@@ -387,6 +394,7 @@ const WhiskasContest = () => {
                             Back
                           </button>
                           <button
+                            type="submit"
                             onClick={() => {
                               if (page === FormTitles.length - 1) {
                                 // alert("FORM SUBMITTED");

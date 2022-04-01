@@ -1,0 +1,22 @@
+.successful-page {
+  text-align: center;
+  padding: 100px 0;
+  img {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #910480;
+  }
+  a {
+    text-decoration: none;
+    background: #ffb800;
+    padding: 10px 30px;
+    display: inline-block;
+    color: #000;
+    border-radius: 25px;
+  }
+}
