@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import MultiStepForm from "../MultiStepForm/MultiStepForm";
+import MainForm from "./Form/MainForm";
 import bgImage from "./img/bgImage.png";
 import "./musicContest.scss";
 const WhiskasContest = () => {
@@ -45,7 +45,7 @@ const WhiskasContest = () => {
                 <p>Step 1 of 2</p>
               </div> */}
               <div className="content-content-main-form">
-                <MultiStepForm />
+                <MainForm />
               </div>
             </div>
           </div>
