@@ -1,7 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import AnimalsInfo from "./Form/AnimalsInfo";
-import PersionalInfo from "./Form/PersionalInfo";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import bgImage from "./img/bgImage.png";
 import navIconActive from "./img/iconActive.svg";
 import navDeIconActive from "./img/iconDeactive.svg";
@@ -10,26 +9,34 @@ const WhiskasContest = () => {
   const [inputField, setInputField] = useState("");
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
+    fileUpload: "",
+    name: "",
+    name2: "",
+    name3: "",
+    name4: "",
+    name5: "",
     email: "",
-    password: "",
-    confirmPassword: "",
-    firstName: "",
-    lastName: "",
-    username: "",
-    nationality: "",
-    other: "",
+    userFirstName: "",
+    userLastName: "",
+    phoneNumber: "",
+    agreementPrivecy: "",
+    agreementTandC: "",
   });
 
   const FormTitles = ["Sign Up", "Personal Info"];
-
-  const PageDisplay = () => {
-    if (page === 0) {
-      return <AnimalsInfo formData={formData} setFormData={setFormData} />;
-    } else if (page === 1) {
-      return <PersionalInfo formData={formData} setFormData={setFormData} />;
-    }
+  const handleChange = (e) => {
+    setInputField(e.target.value);
+  };
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setInputField(e.target.value);
+    await axios.post(`https://reqres.in/api/users`, formData);
   };
 
+  const onInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  console.log(formData);
   return (
     <div>
       <div className="music-playerinner-wrap">
@@ -58,13 +65,6 @@ const WhiskasContest = () => {
                   : "music-contest-data-upload-wrap "
               }
             >
-              {/* <div className="contest-navbar-icon">
-                <span>
-                  <img src={activeIcon} alt="" />
-                  <img src={deActiveIcon} alt="" />
-                </span>
-                <p>Step 1 of 2</p>
-              </div> */}
               <div className="content-content-main-form">
                 <div className="form">
                   <div className="progressbar">
@@ -95,8 +95,270 @@ const WhiskasContest = () => {
                       )}
                     </div>
                   </div>
-                  <div className="form-container">
-                    <div className="form-content-view">{PageDisplay()}</div>
+                  <Form onSubmit={handleFormSubmit} className="form-container">
+                    <div className="form-content-view">
+                      {/* {PageDisplay()} */}
+                      {page === 0 ? (
+                        <>
+                          <Row>
+                            <Col lg={6}>
+                              <Form.Group className="mb-5">
+                                <h4>Upload your Purr!</h4>
+                                <Form.Text className="text-danger mt-5 mb-3 d-block">
+                                  Share your Cat’s purr video or sound file with
+                                  us! *
+                                </Form.Text>
+                                <Form.Control
+                                  type="file"
+                                  onChange={(e) => onInputChange(e)}
+                                  name="fileUpload"
+                                />
+                              </Form.Group>
+                            </Col>
+                          </Row>
+                          <Row>
+                            <Col lg={6}>
+                              <Form.Group className="mb-3">
+                                <h4>About Your Cat</h4>
+                                <Form.Text className="text-danger mt-5 mb-3 d-block">
+                                  How many cat(s) do you live with? *
+                                </Form.Text>
+                                <Form.Select onChange={handleChange}>
+                                  <option value={2} defaultValue>
+                                    2
+                                  </option>
+                                  <option value={3}>3</option>
+                                  <option value={4}>4</option>
+                                  {/* <option value={4}>4</option>
+                                  <option value={5}>5</option>
+                                  <option value={6}>6</option> */}
+                                </Form.Select>
+                              </Form.Group>
+                            </Col>
+                          </Row>
+
+                          {inputField == 2 ? (
+                            <div>
+                              <Form.Text className="text-danger mb-3 d-block">
+                                What are their names? *
+                              </Form.Text>
+                              <Row>
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name"
+                                      // value={formData.name}
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>{" "}
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name2"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                            </div>
+                          ) : inputField == 3 ? (
+                            <div>
+                              {" "}
+                              <Form.Text className="text-danger mb-3 d-block">
+                                What are their names? *
+                              </Form.Text>
+                              <Row>
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name2"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>{" "}
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name3"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                            </div>
+                          ) : inputField == 4 ? (
+                            <div>
+                              {" "}
+                              <Form.Text className="text-danger mb-3 d-block">
+                                What are their names? *
+                              </Form.Text>
+                              <Row>
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name2"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>{" "}
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name3"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>{" "}
+                                <Col lg={6}>
+                                  <Form.Group className="mb-3">
+                                    <Form.Control
+                                      type="text"
+                                      placeholder="2"
+                                      name="name4"
+                                      onBlur={(e) => onInputChange(e)}
+                                    />
+                                  </Form.Group>
+                                </Col>
+                              </Row>
+                            </div>
+                          ) : (
+                            ""
+                          )}
+                          <div className="mt-5 text-center">
+                            <Form.Text className="text-danger my-5 d-block">
+                              Please complete the required fields!
+                            </Form.Text>
+                          </div>
+                        </>
+                      ) : page === 1 ? (
+                        <div className="sign-up-container">
+                          <h4 className="mb-4">About You</h4>
+                          email: "", userFirstName: "", userLastName: "",
+                          phoneNumber: "",
+                          <>
+                            <Row>
+                              <Col lg={6}>
+                                <Form.Group className="mb-2">
+                                  <Form.Text className="text-danger  d-block">
+                                    First Name *
+                                  </Form.Text>
+                                  <Form.Control
+                                    type="text"
+                                    name="userFirstName"
+                                    onBlur={(e) => onInputChange(e)}
+                                  />
+                                </Form.Group>
+                              </Col>
+                              <Col lg={6}>
+                                <Form.Group className="mb-2">
+                                  <Form.Text className="text-danger  d-block">
+                                    Last Name *
+                                  </Form.Text>
+                                  <Form.Control
+                                    type="text"
+                                    name="userLastName"
+                                    onBlur={(e) => onInputChange(e)}
+                                  />
+                                </Form.Group>
+                              </Col>
+                              <Col lg={6}>
+                                <Form.Group className="mb-2">
+                                  <Form.Text className="text-danger  d-block">
+                                    Email Address *
+                                  </Form.Text>
+                                  <Form.Control
+                                    type="email"
+                                    name="email"
+                                    onBlur={(e) => onInputChange(e)}
+                                  />
+                                </Form.Group>
+                              </Col>
+                              <Col lg={6}>
+                                <Form.Group className="mb-2">
+                                  <Form.Text className="text-danger  d-block">
+                                    Phone Number *
+                                  </Form.Text>
+                                  <Form.Control
+                                    type="number"
+                                    name="phoneNumber"
+                                    onBlur={(e) => onInputChange(e)}
+                                  />
+                                </Form.Group>
+                              </Col>{" "}
+                              <Col lg={12}>
+                                <div className="form-checkbox-main-wrap mt-4">
+                                  <div className="single-checkbox-wrap">
+                                    <input
+                                      type="checkbox"
+                                      id="checkbox-1"
+                                      name="agreementPrivecy"
+                                      onChange={(e) => onInputChange(e)}
+                                    />
+                                    <label htmlFor="checkbox-1">
+                                      I have read and agree to the{" "}
+                                      <a href="!#">privacy policy statements</a>{" "}
+                                      and agree to receive marketing emails from
+                                      MARS.
+                                    </label>
+                                  </div>
+                                </div>
+                              </Col>{" "}
+                              <Col lg={12}>
+                                <div className="form-checkbox-main-wrap mt-4">
+                                  <div className="single-checkbox-wrap">
+                                    <input
+                                      type="checkbox"
+                                      id="checkbox-1"
+                                      name="agreementTandC"
+                                      onChange={(e) => onInputChange(e)}
+                                    />
+                                    <label htmlFor="checkbox-1">
+                                      I have read and agree to the{" "}
+                                      <a href="!#">T&Cs</a> from MARS.
+                                    </label>
+                                  </div>
+                                </div>
+                              </Col>
+                            </Row>
+                          </>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
                     <div className="mt-5">
                       {page == 0 ? (
                         <div className="form-navbar-main-btn-area">
@@ -127,8 +389,9 @@ const WhiskasContest = () => {
                           <button
                             onClick={() => {
                               if (page === FormTitles.length - 1) {
-                                alert("FORM SUBMITTED");
-                                console.log(formData);
+                                // alert("FORM SUBMITTED");
+                                // console.log(formData);
+                                setFormData(formData);
                               } else {
                                 setPage((currPage) => currPage + 1);
                               }
@@ -153,7 +416,7 @@ const WhiskasContest = () => {
                         ""
                       )}
                     </div>
-                  </div>
+                  </Form>
                 </div>
               </div>
             </div>

@@ -6,6 +6,8 @@ function AnimalsInfo({ formData, setFormData }) {
   const handleChange = (e) => {
     setInputField(e.target.value);
   };
+  // const {}=formData
+  console.log(formData);
   return (
     <Form>
       <Row>
