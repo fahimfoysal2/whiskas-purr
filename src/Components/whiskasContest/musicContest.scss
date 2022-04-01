@@ -34,8 +34,8 @@
   }
 }
 .music-contest-data-upload-wrap {
-  padding-left: 30%;
-  padding-right: 30%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 .submit-contenst-button-bottom {
   text-align: right;
@@ -67,8 +67,75 @@
     color: #fff;
   }
 }
-.music-contest-data-upload-wrap.file-upload-proccesing {
-  small.text-danger.d-block.form-text {
+.music-contest-data-upload-wrap {
+  small.text-danger {
     color: #910480 !important;
+  }
+}
+// .text-danger {
+//   color: #910480;
+// }
+.form-navbar-main-btn-area {
+  display: flex;
+  justify-content: end;
+  button {
+    color: #910480;
+    background: none;
+    border-radius: 25px;
+    border: 1px solid;
+    padding: 12px 40px;
+    &:last-child {
+      color: #910480;
+      background: #ffb800;
+      border-radius: 25px;
+      border: 1px solid #ffb800;
+      padding: 12px 40px;
+    }
+  }
+  &.next {
+    justify-content: space-between;
+  }
+}
+.form-navbar-main-btn-area- {
+  text-align: center;
+  button {
+    border: none;
+    background: none;
+  }
+  p {
+    color: #910480;
+  }
+}
+.form-navbar-main-btn-area-next {
+  text-align: center;
+  margin-bottom: 40px;
+}
+button.form-navbar-main-kmgf.p-0 {
+  padding-right: 10px !important;
+  display: inline-block;
+}
+.form-navbar-main-btn-area-next button {
+  padding-right: 10px !important;
+  display: inline-block;
+  border: none;
+  background: none;
+}
+.single-checkbox-wrap {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: #910480;
+  }
+  gap: 10px;
+  input {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+}
+.add-form-next-data-area {
+  text-align: center;
+  p {
+    color: #910480;
   }
 }

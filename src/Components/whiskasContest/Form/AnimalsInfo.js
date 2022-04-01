@@ -8,27 +8,36 @@ function AnimalsInfo({ formData, setFormData }) {
   };
   return (
     <Form>
-      <Form.Group className="mb-5">
-        <h4>Upload your Purr!</h4>
-        <Form.Text className="text-danger my-5 d-block">
-          Share your Cat’s purr video or sound file with us! *
-        </Form.Text>
-        <Form.Control type="file" />
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <h4>About Your Cat</h4>
-        <Form.Text className="text-danger my-5 d-block">
-          How many cat(s) do you live with? *
-        </Form.Text>
-        <Form.Select onChange={handleChange}>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-        </Form.Select>
-      </Form.Group>
+      <Row>
+        <Col lg={6}>
+          <Form.Group className="mb-5">
+            <h4>Upload your Purr!</h4>
+            <Form.Text className="text-danger mt-5 mb-3 d-block">
+              Share your Cat’s purr video or sound file with us! *
+            </Form.Text>
+            <Form.Control type="file" />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col lg={6}>
+          <Form.Group className="mb-3">
+            <h4>About Your Cat</h4>
+            <Form.Text className="text-danger mt-5 mb-3 d-block">
+              How many cat(s) do you live with? *
+            </Form.Text>
+            <Form.Select onChange={handleChange}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+            </Form.Select>
+          </Form.Group>
+        </Col>
+      </Row>
+
       {inputField == 1 ? (
         <div>
           <Form.Text className="text-danger mb-3 d-block">
