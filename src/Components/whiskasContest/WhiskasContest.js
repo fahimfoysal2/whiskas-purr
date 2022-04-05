@@ -31,6 +31,36 @@ const WhiskasContest = () => {
   const handleChange = (e) => {
     setInputField(e.target.value);
   };
+  const [checkDataField, setCheckDataField] = useState("");
+  if (
+    formData.fileUpload === "" &&
+    formData.name &&
+    formData.name2 &&
+    formData.name3 &&
+    formData.name4 &&
+    formData.name5
+  ) {
+    setCheckDataField(formData);
+  } else if (
+    formData.fileUpload === "" &&
+    formData.name &&
+    formData.name2 &&
+    formData.name3 &&
+    formData.name4
+  ) {
+    setCheckDataField(formData);
+  } else if (
+    formData.fileUpload === "" &&
+    formData.name &&
+    formData.name2 &&
+    formData.name3
+  ) {
+    setCheckDataField(formData);
+  } else if (formData.fileUpload === "" && formData.name && formData.name2) {
+    setCheckDataField(formData);
+  } else if (formData.fileUpload === "" && formData.name) {
+    setCheckDataField(formData);
+  }
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setInputField(e.target.value);
@@ -43,12 +73,12 @@ const WhiskasContest = () => {
   const onInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  console.log(formData);
+  console.log(formData, "=====>>>>", checkDataField);
   return (
     <div>
-      <div className="music-playerinner-wrap">
+      <div className="music-playerinner-wrap ">
         <Container>
-          <div className="music-player-inner-content-wrap">
+          <div className="music-player-inner-content-wrap fghjhg">
             <div
               className="music-contest-toptitle-wrap"
               style={{ backgroundImage: `url(${bgImage})` }}
@@ -59,7 +89,7 @@ const WhiskasContest = () => {
             </div>
             <div className="music-contest-content-wrap">
               <p>
-                <b>Want to share your feline’s purr loud and proud?</b>
+                <span>Want to share your feline’s purr loud and proud?</span>
                 <br /> Simply leave us your details and upload your cat’s best
                 and most beautiful purr, and you’ll be in to win
                 {/* {1 month worth free WHISKAS® Wet Food}! */}
@@ -366,7 +396,7 @@ const WhiskasContest = () => {
                       )}
                     </div>
                     <div className="mt-5">
-                      {page == 0 ? (
+                      {page == 0 && formData == "" ? (
                         <div className="form-navbar-main-btn-area">
                           <p
                             className="next-form-button-fmgfd"

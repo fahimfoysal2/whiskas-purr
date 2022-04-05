@@ -1,7 +1,7 @@
 .music-player-inner-content-wrap {
   width: 960px;
   margin: auto;
-  background: #5c00500a;
+  // background: #5c00500a;
   padding-bottom: 50px;
 
   .react-tabs__tab-panel--selected {
@@ -85,4 +85,7 @@
   gap: 10px;
   justify-content: center;
   margin-bottom: 30px;
+}
+.music-player-inner-content-wrap.fghjhg {
+  background: rgba(92, 0, 80, 0.0392156863);
 }
