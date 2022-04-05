@@ -6,4 +6,28 @@
   justify-content: center;
   text-align: center;
   color: #fff;
+  width: 100%;
+}
+@media only screen and (max-width: 992px) {
+  .hero-main-area-wrap {
+    background: #90007e;
+    min-height: 310px;
+    // display: block;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+  }
+  .hero-inner-wrap {
+    width: 90%;
+    margin: auto;
+  }
+  .header-bottom-main-wrap nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background: #ffffff !important;
+  }
+  .header-bottom-main-wrap
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .m-auto.navbar-nav
+    a {
+    color: #90007e !important;
+  }
 }

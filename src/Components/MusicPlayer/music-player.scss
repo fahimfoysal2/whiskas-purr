@@ -89,3 +89,17 @@
 .music-player-inner-content-wrap.fghjhg {
   background: rgba(92, 0, 80, 0.0392156863);
 }
+@media only screen and (max-width: 992px) {
+  .music-contest-content-wrap p {
+    padding: 30px 0% !important;
+  }
+  .music-contest-data-upload-wrap {
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .music-player-inner-content-wrap .react-tabs__tab {
+    font-size: 14px;
+  }
+}

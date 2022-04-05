@@ -18,3 +18,32 @@
     }
   }
 }
+
+.navbar-light .navbar-toggler {
+  color: #90007e !important;
+  border-color: rgba(0, 0, 0, 0) !important;
+  padding-left: 0;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0rem !important;
+}
+.navbar-main-menu-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  & > span {
+    display: block;
+    & > span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: #90007e;
+      margin-top: 6px;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+}

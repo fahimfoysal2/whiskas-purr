@@ -396,7 +396,7 @@ const WhiskasContest = () => {
                       )}
                     </div>
                     <div className="mt-5">
-                      {page == 0 && formData == "" ? (
+                      {page == 0 ? (
                         <div className="form-navbar-main-btn-area">
                           <p
                             className="next-form-button-fmgfd"

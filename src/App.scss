@@ -1,0 +1,11 @@
+@media only screen and (max-width: 992px) {
+  .music-player-inner-content-wrap {
+    width: 100% !important;
+  }
+  .music-player-inner-content-wrap .react-tabs__tab-panel--selected {
+    min-height: 300px !important;
+  }
+  .music-player-inner-content-wrap .react-tabs__tab-panel--selected iframe {
+    min-height: 300px !important;
+  }
+}

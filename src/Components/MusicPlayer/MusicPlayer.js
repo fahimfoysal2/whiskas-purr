@@ -36,7 +36,6 @@ const MusicPlayer = () => {
                   <div className="youtube-player-area">
                     <iframe
                       width="564"
-                      height="400"
                       src="https://www.youtube.com/embed/ByH9LuSILxU"
                       title="YouTube video player"
                       frameBorder="0"
@@ -50,7 +49,6 @@ const MusicPlayer = () => {
                     src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
                     title="spotify music player"
                     width="564"
-                    height="400"
                     frameBorder="0"
                     allowtransparency="true"
                     allow="encrypted-media"

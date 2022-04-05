@@ -7,7 +7,16 @@ const HeaderBottom = () => {
     <div className="header-bottom-main-wrap">
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+            <div className="navbar-main-menu-wrap">
+              <span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <p>Menu</p>
+            </div>
+          </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="m-auto">
               <NavLink className="nav-link" to="/">
